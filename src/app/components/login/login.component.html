@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="container display-flex">
+    <div class="row">
+      <div class="col-xs-12 col-lg-6 custom-margin">
+        <h1 class="title">Controle de Dívidas</h1>
+        <p class="subTitle">
+          Agora é possível ter o controle das suas dívidas. Saiba o que está
+          gastando mais e saia do vermelho.
+        </p>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <div class="fixed-wrapper">
+          <mat-card class="custom-style-card">
+            <mat-tab-group mat-align-tabs="center">
+              <mat-tab label="BEM-VINDO" >
+                <form [formGroup]="formLogin" (ngSubmit)="login()">
+                  <div class="input-group mb-3">
+                    <input type="tel" class="form-control" placeholder="CPF" aria-label="email"
+                      aria-describedby="cpf" formControlName="cpf" maxlength="11"/>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Senha" aria-label="password"
+                      aria-describedby="password" formControlName="password" />
+                  </div>
+                  <br>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary btn-login" type="submit" [disabled]="formLogin.invalid">
+                      ENTRAR
+                    </button>
+                  </div>                
+                </form>
+              </mat-tab>
+            </mat-tab-group>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
