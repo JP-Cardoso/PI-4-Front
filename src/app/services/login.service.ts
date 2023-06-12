@@ -15,7 +15,7 @@ export class LoginService {
     private httpClient: HttpClient
   ) { }
 
-  login(user: any): Observable<any> {
-    return this.httpClient.post<any>(this.url + '/auth/user', + user)
-  }
+  // login(user: any): Observable<any> {
+  //   return this.httpClient.post<any>(this.url + '/auth/user', + user)
+  // }
 }

@@ -59,16 +59,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     if(this.isValidForm()) {
       const user = this.createPayload();
       console.log(user);      
-      this.loginService.login(user)
-        .pipe(takeUntil(this.destroy$))
-        .subscribe((res: any) => {
-          console.log(res);
+      // this.loginService.login(user)
+        // .pipe(takeUntil(this.destroy$))
+        // .subscribe((res: any) => {
+        //   console.log(res);
           
           // this.localStorageService.setLocalStorage('token', JSON.stringify(token))
           // this.localStorageService.setLocalStorage('user', JSON.stringify(cpf))
           // this.utilService.showSucces('Login realizado com sucesso!')
           // this.navigateUrl('dashboard')
-        })
+        // })
     }
   }
 

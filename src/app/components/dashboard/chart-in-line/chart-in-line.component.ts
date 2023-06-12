@@ -1,13 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ReportsServiceService } from 'src/app/services/reports-service.service';
 
 @Component({
   selector: 'app-chart-in-line',
   templateUrl: './chart-in-line.component.html',
   styleUrls: ['./chart-in-line.component.scss']
 })
-export class ChartInLineComponent {
+export class ChartInLineComponen implements OnInit{
   chart: any;
 	
+	constructor(
+		private service: ReportsServiceService,
+	) {
+
+	}
+
+	ngOnInit(): void {
+		this.getReport()
+	};
+
+	getReport() {
+		this.service.getReportsAnalitic().subscribe(
+			(res) => {
+				console.log(res);
+				
+			}
+		)
+	}
+
 	chartOptions = {
 	  animationEnabled: true,
 	  theme: "light2",
