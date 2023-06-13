@@ -37,13 +37,13 @@ export class ApiService {
     return this.httpClient.post<RegisterUser>(environment.BASE_URL + '/auth/register/user', formData)
     .pipe(
       catchError((err) => {
-        if(err.status === 0 && err.status !== 404) {
-          this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-        } else if(err.status === 404) {
-          this.utilsService.showError(err.error.message)
-        } else {
-          this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-        }
+        // if(err.status === 0 && err.status !== 404) {
+        //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+        // } else if(err.status === 404) {
+        //   this.utilsService.showError(err.error.message)
+        // } else {
+        //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+        // }
         return throwError(() => err)
       })
     )
@@ -56,13 +56,13 @@ export class ApiService {
       .pipe(
         retry(2),
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // if(err.status === 0 && err.status !== 404) {
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
       )
@@ -74,13 +74,13 @@ export class ApiService {
     return this.httpClient.get<DownloadImage>(environment.BASE_URL + '/download/image', {headers: headers})
       .pipe(
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // if(err.status === 0 && err.status !== 404) {
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
       )
@@ -90,9 +90,9 @@ export class ApiService {
   registerRevenues(revenue: any): Observable<RegisterRevenues> {
     return this.httpClient.post<RegisterRevenues>(environment.BASE_URL + '/auth/revenues', revenue)
       .pipe(
-        catchError((err) => {
-          return throwError(() => err)
-        })
+        // catchError((err) => {
+        //   return throwError(() => err)
+        // })
       )
 
   }
@@ -105,13 +105,13 @@ export class ApiService {
       .pipe(
         first(),
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // if(err.status === 0 && err.status !== 404) {
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
       )
@@ -121,13 +121,13 @@ export class ApiService {
     return this.httpClient.delete<DeleteRevenues>(environment.BASE_URL + '/delete/revenue/' + id)
       .pipe(
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // if(err.status === 0 && err.status !== 404) {
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
       )
@@ -137,14 +137,14 @@ export class ApiService {
     return this.httpClient.put<UpdateRevenues>(environment.BASE_URL + '/update/revenues/' + id, payload)
       .pipe(
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
+          // if(err.status === 0 && err.status !== 404) {
 
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
       )
@@ -153,9 +153,9 @@ export class ApiService {
   registerDebts(debt: any): Observable<RegisterDebts> {
     return this.httpClient.post<RegisterDebts>(environment.BASE_URL + '/auth/debts', debt)
       .pipe(
-        catchError((err) => {
-          return throwError(() => err)
-        })
+        // catchError((err) => {
+        //   return throwError(() => err)
+        // })
       )
 
   }
@@ -169,13 +169,13 @@ export class ApiService {
         first(),
 
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // if(err.status === 0 && err.status !== 404) {
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
       )
@@ -186,15 +186,15 @@ export class ApiService {
     return this.httpClient.put<UpdateDebts>(environment.BASE_URL + '/update/debts/' + id, payload)
       .pipe(
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
+          // if(err.status === 0 && err.status !== 404) {
 
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
 
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
       )
@@ -204,13 +204,13 @@ export class ApiService {
     return this.httpClient.delete<DeleteDebts>(environment.BASE_URL + '/delete/debt/' + id)
       .pipe(
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // if(err.status === 0 && err.status !== 404) {
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
 
@@ -221,13 +221,13 @@ export class ApiService {
     return this.httpClient.get<any>(environment.BASE_URL + '/user/' + id)
       .pipe(
         catchError((err) => {
-          if(err.status === 0 && err.status !== 404) {
-            this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
-          } else if(err.status === 404) {
-            this.utilsService.showError(err.error.message)
-          } else {
-            this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
-          }
+          // if(err.status === 0 && err.status !== 404) {
+          //   this.utilsService.showError('Ocorreu um erro na aplicação, tente novamente!')
+          // } else if(err.status === 404) {
+          //   this.utilsService.showError(err.error.message)
+          // } else {
+          //   this.utilsService.showError('Ocorreu um erro no servidor, tente mais tarde!')
+          // }
           return throwError(() => err)
         })
 

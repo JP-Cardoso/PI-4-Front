@@ -1,8 +1,8 @@
 .main {
-  width: 99vw;
-  display: flex;
-  justify-content: space-around;
-  background-color: antiquewhite;
+  // width: 100%;
+  // display: flex;
+  // justify-content: space-around;
+  // background-color: antiquewhite;
 
   #bars{
   } 
@@ -10,4 +10,9 @@
   #cards{
 
   }
+}
+
+.chart-in-line {
+  display: flex;
+  justify-content: space-around;
 }

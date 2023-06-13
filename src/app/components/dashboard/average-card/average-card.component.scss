@@ -1,33 +1,34 @@
 .container {
+  margin-top: 4px;
+  border-radius: 8px;
+  height: 90px;
+  background-color: aquamarine;
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-items: flex-end;
-//   position: absolute;
-        
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 mat-card {
-    width: 240px;
-    height: 80px;
+  width: 280px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  justify-content: center;
+  mat-card-header {
+    mat-card-title {
+      width: 100%;
+      font-size: medium;
+      text-align: center;
+    }
+  }
+  mat-card-content {
     display: flex;
-    flex-wrap: wrap;
-    border-radius: 8px;
     justify-content: center;
-    mat-card-header{
-        mat-card-title{
-            font-size: medium;
-            text-align: center;
-        }       
+    width: 100%;
+    p {
+      text-align: center;
+      font-size: large;
     }
-    mat-card-content{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        p{
-            text-align: center;
-            font-size: large;
-        }
-    }
+  }
 }
-

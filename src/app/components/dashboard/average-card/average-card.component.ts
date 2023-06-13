@@ -8,10 +8,10 @@ import { ReportsServiceService } from 'src/app/services/reports-service.service'
 })
 export class AverageCardComponent implements OnInit {
 
-  mediaTemperatura!: number;
-  mediaUmidade!: number;
-  desvioPadrãoTemperatura!: number;
-  desvioPadrãoUmidade!: number;
+  mediaTemperatura?: number = 0;
+  mediaUmidade?: number = 0;
+  desvioPadraoTemperatura?: number = 0;
+  desvioPadraoUmidade?: number = 0;
 
   constructor(
     private service: ReportsServiceService
@@ -26,12 +26,12 @@ export class AverageCardComponent implements OnInit {
   getReport() {
 		this.service.getReportsAnalitic().subscribe(
 			(res) => {
-				console.log(res);
+				// console.log(res);
         //[0].temperatura.media
         this.mediaTemperatura = res[0].temperatura.media;
         this.mediaUmidade = res[1].umidade.media;
-        this.desvioPadrãoTemperatura = res[0].temperatura.desvioPadraoAmostra;
-        this.desvioPadrãoUmidade = res[1].umidade.desvioPadraoAmostra;
+        this.desvioPadraoTemperatura = res[0].temperatura.desvioPadraoAmostra;
+        this.desvioPadraoUmidade = res[1].umidade.desvioPadraoAmostra;
 			}
 		)
 	}

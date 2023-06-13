@@ -17,6 +17,7 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { TestComponent } from './test/test.component';
 import { AverageCardComponent } from './average-card/average-card.component';
 import { ChartInLineComponen } from './chart-in-line/chart-in-line.component';
+import { ChartInLineMoustreComponent } from './chart-in-line-moustre/chart-in-line-moustre.component';
 
 registerLocaleData(localePt, 'pt')
 
@@ -40,7 +41,8 @@ export const CustomCurrencyMaskConfig = {
     InputWidthDirective,
     TestComponent,
     AverageCardComponent,
-    ChartInLineComponen
+    ChartInLineComponen,
+    ChartInLineMoustreComponent
   ],
   imports: [
     CommonModule,
