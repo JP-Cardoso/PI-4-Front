@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CanvasJS } from '@canvasjs/angular-charts';
 import { ReportsServiceService } from 'src/app/services/reports-service.service';
+import Chart from 'chart.js/auto';
+
 
 @Component({
 	selector: 'app-chart-in-line',
@@ -8,78 +11,78 @@ import { ReportsServiceService } from 'src/app/services/reports-service.service'
 })
 export class ChartInLineComponen implements OnInit {
 	chart: any;
-	temperarture: any = []
-
+	temperature: any = []
+	chartOptions: any;
+	dataPoints: any = [];
+	x: any = [];
+	y: any = []
 	constructor(
 		private service: ReportsServiceService,
 	) {
-
+		this.getReport();
 	}
 
 	ngOnInit(): void {
-		this.getReport()
+		console.log(this.temperature);
+
 	};
 
 	getReport() {
 		this.service.getReports().subscribe(
 			(res) => {
-				// console.log(res);
 				res.filter((item: any) => {
-					this.temperarture.push({
+					this.temperature.push({
 						x: item.dateInsert,
 						y: Number(item.temperature),
 					})
 				})
+				this.getDataArray()
 			}
 		)
-		console.log(this.temperarture);
 
 	};
 
-	dadosFormatados() {
-		const dataPoints = [];
-		for (let i = 0; i < this.temperarture.length; i++) {
-			const dataPoint = {
-				x: new Date(this.temperarture[i].x),
-				y: Number(this.temperarture[i].y)
-			};
-			dataPoints.push(dataPoint);
+	getDataArray() {
+		console.log('entrou', this.temperature.length);
+		
+		let data = this.temperature
+		for (let i = 0; i < data.length; i++) {
+			console.log(data[i]);
+			
+			this.x.push(data[i].x)
+			this.y.push(data[i].y)
 		}
-		return dataPoints;
+		console.log(this.x);
+		this.chatNew()	
 	}
 
-	chartOptions = {
-		animationEnabled: true,
-		theme: "light2",
-		title: {
-			text: "Temperatura ao Dia"
-		},
-		axisX: {
-			valueFormatString: "D MMM"
-		},
-		axisY: {
-			title: "Number of Sales"
-		},
-		toolTip: {
-			shared: true
-		},
-		legend: {
-			cursor: "pointer",
-			itemclick: function (e: any) {
-				if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-					e.dataSeries.visible = false;
-				} else {
-					e.dataSeries.visible = true;
-				}
-				e.chart.render();
+	chatNew() {
+		const ctx = document.getElementById('lineChart') as HTMLCanvasElement;
+		this.chart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: this.x,
+				datasets: [
+					{
+						label: 'Série A',
+						data: this.y,
+						borderColor: 'black',
+						backgroundColor: 'rgba(255,0,0,0.3)'
+					},
+					//   {
+					// 	label: 'Série B',
+					// 	data: [28, 48, 40, 19, 86, 27, 90],
+					// 	borderColor: 'black',
+					// 	backgroundColor: 'rgba(0,0,255,0.3)'
+					//   }
+				]
+			},
+			options: {
+				responsive: true
 			}
-		},
-		data: [{
-			type: "line",
-			showInLegend: true,
-			name: "Projected Sales",
-			xValueFormatString: "MMM DD, YYYY",
-			dataPoints: this.dadosFormatados()
-		}]
+		});
 	}
+
+
+
 }

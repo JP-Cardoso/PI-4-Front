@@ -1,12 +1,41 @@
-const express = require("express")
-const path = require("path")
-const app = express();
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.stock.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+  var dataPoints = [];
+  
+  var stockChart = new CanvasJS.StockChart("chartContainer",{
+    title: {
+        text: "StockChart Title"
+      },
+    charts: [{      
+      data: [{        
+        type: "line", //Change it to "spline", "area", "column"
+        dataPoints : dataPoints
+      }]
+    }],
+    navigator: {
+      slider: {
+        minimum: new Date(2018,04, 01),
+        maximum: new Date(2018,06, 01)
+      }
+    }
+  }); 
 
-const appName = "curso-angular15-na-pratica"
-
-app.use(express.static(__dirname + `/dist/${appName}`))
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname + `/dist/${appName}/index.html`))
-})
-
-app.listen(process.env.PORT || 8080)
+  $.getJSON("https://canvasjs.com/data/docs/btcusd2018.json", function(data) {  
+    for(var i = 0; i < data.length; i++){
+      dataPoints.push({x: new Date(data[i].date), y: Number(data[i].close)});
+    }
+	
+    stockChart.render();
+  });
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+</body>
+</html>

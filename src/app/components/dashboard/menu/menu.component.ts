@@ -29,10 +29,10 @@ export class MenuComponent implements OnInit {
 
   getImageUser() {
     const nameImage = this.localStorageService.getLocalStorage('userInfo')
-    this.apiService.downloadImage(nameImage.image).subscribe((res: DownloadImage) => {
-      let url = 'data:image/jpg;base64,' + res.image;
-      this.imageUser = this.sanitizer.bypassSecurityTrustResourceUrl(url)
-    })
+    // this.apiService.downloadImage(nameImage.image).subscribe((res: DownloadImage) => {
+    //   let url = 'data:image/jpg;base64,' + res.image;
+    //   this.imageUser = this.sanitizer.bypassSecurityTrustResourceUrl(url)
+    // })
   }
   getMessageHour(message: string) {
     this.messageHour = message;
