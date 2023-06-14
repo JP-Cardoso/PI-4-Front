@@ -64,7 +64,7 @@ export class ChartInLineComponen implements OnInit {
 						label: 'Temperatura °C',
 						data: this.y.reverse(),
 						borderColor: 'black',
-						backgroundColor: 'rgba(255,0,0,0.3)'
+						backgroundColor: '#FF3333'
 					}	
 				]
 			},

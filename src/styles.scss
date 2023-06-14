@@ -2,10 +2,16 @@
 
 @import '~bootstrap/dist/css/bootstrap.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+   
+}
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-
 @import '../node_modules/ngx-toastr/toastr.css'

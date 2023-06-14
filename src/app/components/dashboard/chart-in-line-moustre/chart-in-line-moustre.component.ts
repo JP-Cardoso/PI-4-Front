@@ -27,8 +27,6 @@ export class ChartInLineMoustreComponent implements OnInit {
 	getReport() {
 		this.service.getReports().subscribe(
 			(res) => {
-				console.log(res);
-				
 				res.filter((item: any) => {
 					this.mouistre.push({						
 						x: new Date(item.dateInsert),
@@ -45,13 +43,10 @@ export class ChartInLineMoustreComponent implements OnInit {
 		console.log('entrou', this.mouistre.length);
 		
 		let data = this.mouistre
-		for (let i = 0; i < data.length; i++) {
-			// console.log(data[i]);
-			
+		for (let i = 0; i < data.length; i++) {			
 			this.x.push(((data[i].x).toTimeString()).slice(0,5))
 			this.y.push(data[i].y)
 		}
-		// console.log(this.x);
 		this.chatNew()	
 	}
 
@@ -67,7 +62,7 @@ export class ChartInLineMoustreComponent implements OnInit {
 						label: 'Umidade %',
 						data: this.y.reverse(),
 						borderColor: 'black',
-						backgroundColor: 'rgba(255,0,0,0.3)'
+						backgroundColor: '#33FFFF'
 					}
 				]
 			},

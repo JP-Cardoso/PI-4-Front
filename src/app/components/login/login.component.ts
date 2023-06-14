@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   formLogin!: FormGroup;
   destroy$: Subject<boolean> = new Subject<boolean>();
   dialogRef: any;
+  backgroud:string = '../../../assets/imagem-1250.jpg';
   constructor(
     private fb: FormBuilder,
     private dialog: MatDialog,

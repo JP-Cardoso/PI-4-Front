@@ -1,24 +1,27 @@
 .main {
-  // width: 100%;
-  // display: flex;
-  // justify-content: space-around;
-  // background-color: antiquewhite;
+  margin-top: -6px;
+  background-image: url('../../../assets/escuro.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.95; 
+  background-color: black;
+  height: 93.5%;
 
-  #bars{
-  } 
-
-  #cards{
-
+  .cards {
+    margin-top: 6px;
+    margin-bottom: 6px;
   }
 }
 
-// .container {
-//   display: flex;
-// }
-
 .chart-in-line {
+  // margin-top: px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  app-two-carts-in-line {
+    margin-top: 5px;
+  }
 
 }

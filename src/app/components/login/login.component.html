@@ -1,17 +1,18 @@
 <div class="main">
   <div class="container display-flex">
     <div class="row">
-      <div class="col-xs-12 col-lg-6 custom-margin">
-        <h1 class="title">Controle</h1>
+      <div class="col-xs-12 col-md-6 custom-margin">
+        <h1 class="title">Monitore</h1>
+       
         <p class="subTitle">
-         
+          A temperatura e a umidade de seus cafés!
         </p>
       </div>
-      <div class="col-xs-12 col-lg-6">
+      <div class="col-xs-12 col-md-6">
         <div class="fixed-wrapper">
           <mat-card class="custom-style-card">
             <mat-tab-group mat-align-tabs="center">
-              <mat-tab label="BEM-VINDO" >
+              <mat-tab label="BEM-VINDO NOVAMENTE" >
                 <form [formGroup]="formLogin" (ngSubmit)="login()">
                   <div class="input-group mb-3">
                     <input type="tel" class="form-control" placeholder="CPF" aria-label="email"

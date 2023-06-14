@@ -69,13 +69,13 @@ export class TwoCartsInLineComponent implements OnInit {
             label: 'Umidade %',
             data: this.y.reverse(),
             borderColor: 'black',
-            backgroundColor: 'rgba(255,0,0,0.3)'
+            backgroundColor: '#33FFFF'
           },
           {
             label: 'Temperatura °C',
             data: this.z.reverse(),
             borderColor: 'black',
-            backgroundColor: 'rgba(255,0,0,)'
+            backgroundColor: '#FF3333'
           }
         ]
       },

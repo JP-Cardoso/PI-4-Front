@@ -1,5 +1,5 @@
 nav {
-  background-color: #0d6efd;
+  background-color: #14522B;
   height: 51px;
 
   .float-left {
@@ -27,12 +27,13 @@ nav {
     list-style: none;
   }
   a {
-    color: white;
+    color: #f1af09;
     text-decoration: none;
+    font-size: large;
   }
 
   a:hover {
-    color: white;
+    color: #F5F5DC;
     cursor: pointer;
   }
 }

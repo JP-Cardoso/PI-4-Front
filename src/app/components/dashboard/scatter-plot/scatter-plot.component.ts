@@ -34,37 +34,25 @@ export class ScatterPlotComponent implements OnInit {
           this.data.push({
             // x: new Date(item.dateInsert),
             y: Number(item.moustre),
-            z: Number(item.temperature)
+            x: Number(item.temperature)
           })
         })
-        this.getDataArray()
+        this.newChart()
       }
     )
 
   };
 
-  getDataArray() {
-    console.log('entrou', this.data.length);
-
-    let data = this.data
-    for (let i = 0; i < data.length; i++) {     // console.log(data[i]);
-      this.x.push(data[i].z)
-      this.y.push(data[i].y)
-    }
-    // console.log(this.x);
-    this.newChart()
-  }
-
 
   newChart() {
     console.log(this.data);
-    
+
     const scatter = document.getElementById('scatterPlot') as HTMLCanvasElement;
     const cnfig = {
       datasets: [{
-        label: 'Scatter Dataset',
+        label: 'Disperção Entre Umidade e Temperatura',
         data: this.data,
-        backgroundColor: 'rgb(255, 99, 132)'
+        // backgroundColor: 'rgb(255, 99, 132)'
       }],
     }
     this.chart = new Chart(scatter, {
@@ -73,6 +61,7 @@ export class ScatterPlotComponent implements OnInit {
       options: {
         scales: {
           x: {
+            // label: 'Umidade',
             type: 'linear',
             position: 'bottom'
           }
