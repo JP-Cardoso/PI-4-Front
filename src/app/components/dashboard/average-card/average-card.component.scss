@@ -1,19 +1,17 @@
 .container {
-  margin-top: 4px;
-  border-radius: 8px;
-  height: 90px;
-  // background-color: aquamarine;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-items: center;
+  justify-content: space-between;
 }
 
 mat-card {
   width: 280px;
-  height: 80px;
+  height: 70px;
   display: flex;
   flex-wrap: wrap;
   border-radius: 8px;
+  margin: 0px 4px 0px 4px;
   justify-content: center;
   mat-card-header {
     mat-card-title {

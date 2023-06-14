@@ -3,20 +3,14 @@
   background-image: url('../../../assets/escuro.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.95; 
   background-color: black;
   height: 93.5%;
-
-  .cards {
-    margin-top: 6px;
-    margin-bottom: 6px;
-  }
+  padding-top: 4px;
 }
 
 .chart-in-line {
-  // margin-top: px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 5px;

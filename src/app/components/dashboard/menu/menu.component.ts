@@ -39,12 +39,13 @@ export class MenuComponent implements OnInit {
   }
 
   getNameUser() {
-    const nameUser = this.localStorageService.getLocalStorage('userInfo')
-    this.showNameUser = nameUser.name;
+    const nameUser = this.localStorageService.getLocalStorage('user')
+    this.showNameUser = nameUser;
   }
 
   logout() {
-    this.localStorageService.removeLocalStorage('token')
+    this.localStorageService.removeLocalStorage('token');
+    this.localStorageService.removeLocalStorage('user')
     this.router.navigate(['/'])
   }
 }
