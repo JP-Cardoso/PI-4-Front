@@ -18,6 +18,8 @@ import { TestComponent } from './test/test.component';
 import { AverageCardComponent } from './average-card/average-card.component';
 import { ChartInLineComponen } from './chart-in-line/chart-in-line.component';
 import { ChartInLineMoustreComponent } from './chart-in-line-moustre/chart-in-line-moustre.component';
+import { ScatterPlotComponent } from './scatter-plot/scatter-plot.component';
+import { TwoCartsInLineComponent } from './two-carts-in-line/two-carts-in-line.component';
 
 registerLocaleData(localePt, 'pt')
 
@@ -42,7 +44,9 @@ export const CustomCurrencyMaskConfig = {
     TestComponent,
     AverageCardComponent,
     ChartInLineComponen,
-    ChartInLineMoustreComponent
+    ChartInLineMoustreComponent,
+    ScatterPlotComponent,
+    TwoCartsInLineComponent
   ],
   imports: [
     CommonModule,

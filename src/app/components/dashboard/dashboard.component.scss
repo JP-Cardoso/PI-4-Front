@@ -12,7 +12,13 @@
   }
 }
 
+// .container {
+//   display: flex;
+// }
+
 .chart-in-line {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+
 }
